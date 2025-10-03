@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Prism&family=Workbench&display=swap");
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hn-app-title {
+  margin: 0;
+  padding: 20px 0 20px 0;
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Tilt Prism", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "XROT" 0, "YROT" 0;
+}
+
+.app-loading h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
+  padding-top: 45vh;
+}
+
+.app-loading {
+  width: 100vw;
+  height: 100vw;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  padding-bottom: 50px;
+  /* background-repeat: ; */
+  --tile: 100px;
+
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'>\
+  <text x='50%' y='50%' text-anchor='middle' dominant-baseline='middle' \
+        font-family='monospace' font-size='24' fill='rgba(255,255,255, .15)'>&lt;/&gt;</text>\
+</svg>");
+  background-size: var(--tile);
+}
+
+.hacker-news-app-container {
+  width: 100vw;
+  height: 100%;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  padding-bottom: 50px;
+  --tile: 100px;
+
+  /* background-repeat: ; */
+
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'>\
+  <text x='50%' y='50%' text-anchor='middle' dominant-baseline='middle' \
+        font-family='monospace' font-size='24' fill='rgba(255,255,255, .15)'>&lt;/&gt;</text>\
+</svg>");
+  background-size: var(--tile);
+}
