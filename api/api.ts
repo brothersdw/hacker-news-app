@@ -6,7 +6,7 @@ const api = {
   getLatestNews: async (state: (obj: Story) => void, page: number) => {
     try {
       const currentStories = await axios.get<Story>(
-        `${baseUrl}?tags=front_page&${page}&hitsPerPage=30`
+        `${baseUrl}?tags=front_page&page=${page || 0}&hitsPerPage=12`
       );
       return state(currentStories.data);
     } catch (error) {
@@ -22,11 +22,9 @@ const api = {
   ) => {
     try {
       const query = searchString;
-      console.log("this is your query", query);
       const queryStories = await axios.get<Story>(
-        `${baseUrl}?query=${query}&tags=story&page=${page}&hitsPerPage=30`
+        `${baseUrl}?query=${query}&tags=story&page=${page || 0}&hitsPerPage=12`
       );
-      console.log("This is what was returned:", queryStories.data);
       return state(queryStories.data);
     } catch (error) {
       throw new Error(

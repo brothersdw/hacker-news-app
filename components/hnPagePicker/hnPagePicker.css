@@ -1,0 +1,21 @@
+.hn-page-nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+.hn-page-nav button {
+  border: 1px solid rgb(71, 71, 71);
+  color: white;
+  width: 30px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.page-btn-inactive {
+  background-color: #0f0f0f;
+}
+
+.page-btn-active {
+  background-color: rgb(56, 3, 53);
+}

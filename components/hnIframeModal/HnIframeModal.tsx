@@ -6,9 +6,7 @@ type HnIframeModalProps = {
   onClearUrl: () => void;
 };
 const HnIframeModal = ({ url, onClearUrl }: HnIframeModalProps) => {
-  let modalContainerClass = `modal-container ${
-    url ? "fadeInClass" : "fadeOutClass"
-  }`;
+  let modalContainerClass = `modal-container ${url && "fadeInClass"}`;
   if (!url) return;
   return (
     <div className={modalContainerClass}>
