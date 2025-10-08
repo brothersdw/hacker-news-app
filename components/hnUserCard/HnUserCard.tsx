@@ -10,10 +10,9 @@ export type HnUserCard = {
 
 const HnUserCard = () => {
   const [userInfo, setUserInfo] = useState<HnUserCard | null>(null);
-  const [userName, setUserName] = useState(
-    window.location.pathname.split("/").pop()
-  );
+  const [userName, setUserName] = useState<string>();
   useEffect(() => {
+    setUserName(window.location.pathname.split("/").pop());
     const getUserInfo = async () => {
       api.getUser(setUserInfo, userName!);
     };
