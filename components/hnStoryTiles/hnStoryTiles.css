@@ -9,7 +9,7 @@
   }
 }
 
-.news-tile-container {
+/* .news-tile-container {
   opacity: 0;
   width: 90%;
   margin: auto;
@@ -24,9 +24,9 @@
   border-radius: 10px;
   z-index: 1;
   animation: fadeIn 1s forwards;
-}
+} */
 
-.news-tile-container nav {
+.news-tile-container .hn-page-nav {
   width: 50%;
   display: inline-flex;
   justify-content: left;
@@ -41,7 +41,7 @@
   --thumb-active: #ffffff;
 }
 
-.news-tile-container nav {
+.news-tile-container .hn-page-nav {
   scrollbar-width: thin; /* auto | thin | none */
   scrollbar-color: var(--thumb) var(--track);
 }
@@ -61,14 +61,6 @@
   animation-delay: 0.5s;
 }
 
-.hn-results {
-  opacity: 0;
-  text-align: center;
-  width: 100%;
-  font-size: 4rem;
-  animation: fadeIn 0.5s forwards;
-}
-
 .hn-tiles-loading h1 {
   text-align: center;
   font-size: 3rem;
@@ -77,22 +69,11 @@
 
 .hn-tiles-loading {
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   background-color: rgb(26, 26, 26);
   color: rgb(255, 255, 255);
   margin-top: 0;
   padding: 0;
-  /* padding-bottom: 50px; */
-
-  /* background-repeat: ; */
-  /* --tile: 100px; */
-
-  /* background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'>\
-  <text x='50%' y='50%' text-anchor='middle' dominant-baseline='middle' \
-        font-family='monospace' font-size='24' fill='rgba(255,255,255, .15)'>&lt;/&gt;</text>\
-</svg>");
-  background-size: var(--tile); */
 }
 
 .news-tile {
@@ -154,7 +135,7 @@
 }
 
 .hn-news-tile-date {
-  height: 20px;
+  height: 40px;
   overflow: auto;
   --track: rgb(117, 6, 117); /* track color */
   --thumb: #2c2c2c; /* thumb color */
@@ -181,15 +162,19 @@
   background-color: rgb(117, 6, 117);
 }
 
-.news-iframe-container {
+.news-comment-container {
   width: 300px;
   height: 100px;
-  margin: auto;
+  margin: 0 auto 10px auto;
   overflow: auto;
   --track: rgb(117, 6, 117); /* track color */
   --thumb: #2c2c2c; /* thumb color */
   --thumb-hover: #ffffff;
   --thumb-active: #ffffff;
+}
+
+.news-comment-background {
+  background-color: #0f0f0f;
 }
 
 .news-iframe-container {
@@ -204,7 +189,7 @@
 .iframe-pop-out-icon {
   opacity: 0;
   width: 300px;
-  height: 100px;
+  height: 94px;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
@@ -230,10 +215,14 @@
 
 .news-tiles-loading {
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
   background-color: black;
   color: rgb(255, 255, 255);
-  padding-bottom: 50px;
   /* background-repeat: ; */
   --tile: 100px;
 

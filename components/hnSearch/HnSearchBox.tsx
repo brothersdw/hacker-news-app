@@ -1,24 +1,19 @@
-import { useRef, type FormEvent, useContext } from "react";
-import { HnAppRootContext } from "../../HackerNewsApp";
+import { useRef, type FormEvent } from "react";
 import "./hnSearchBox.css";
 type HnSearchBoxProps = {
-  onSearch: (searchFor: string) => void;
+  onQuery: (newQuery: string) => void;
 };
-const HnSearchBox = () => {
-  const hnRootContext = useContext(HnAppRootContext);
-  if (!hnRootContext) throw new Error("error");
-  // const { searchParams } = hnContext;
-  const { setSearchFor } = hnRootContext;
+const HnSearchBox = ({ onQuery }: HnSearchBoxProps) => {
   const searchTerm = useRef<HTMLInputElement | null>(null);
   const handleSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const search = searchTerm.current!.value;
+    onQuery(search);
     event.currentTarget.reset();
-    setSearchFor(search);
   };
+
   return (
     <form className="hn-search-container" onSubmit={handleSearch}>
-      {/* <div className="hn-search-box-container"> */}
       <input
         type="text"
         id="hn-search-box"
@@ -27,7 +22,6 @@ const HnSearchBox = () => {
         placeholder="Search Hacker News"
         ref={searchTerm}
       />
-      {/* </div> */}
       <button className="hn-search-btn">Search</button>
     </form>
   );

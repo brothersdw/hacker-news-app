@@ -1,20 +1,32 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./hnPagePicker.css";
-import { LatestHnTilesContext } from "../latestHnTiles/LatestHnTiles";
 
 type HnPagePickerProps = {
   pages: number;
   onSetPage: (page: number) => void;
+  setResetPageNum: (reset: boolean) => void;
+  resetPageNum: boolean;
+  searchParams: URLSearchParams;
 };
-const HnPagePicker = ({ pages, onSetPage }: HnPagePickerProps) => {
-  const hnContext = useContext(LatestHnTilesContext);
-  if (!hnContext) throw new Error("error");
-  const { searchParams, setPage } = hnContext;
+const HnPagePicker = ({
+  pages,
+  onSetPage,
+  resetPageNum,
+  setResetPageNum,
+  searchParams,
+}: HnPagePickerProps) => {
   const [currentPage, setCurrentPage] = useState(
     parseInt(searchParams.get("page")!)
   );
 
-  useEffect(() => {});
+  useEffect(() => {
+    if (resetPageNum) {
+      onSetPage(0);
+      setCurrentPage(0);
+      setResetPageNum(false);
+    }
+  }, [resetPageNum]);
+
   const pageNumbers = Array.from({ length: pages }, (_, i) => i);
   return (
     <div className="hn-page-nav-container">
@@ -23,13 +35,7 @@ const HnPagePicker = ({ pages, onSetPage }: HnPagePickerProps) => {
           <button
             onClick={() => {
               onSetPage(pageNum);
-              setPage(pageNum);
               setCurrentPage(pageNum);
-              // setCurrentPage((prevPage) => {
-              //   const pageString = searchParams.get("page");
-              //   const pageNumber = parseInt(pageString!);
-              //   return pageNumber ? pageNumber : 0;
-              // });
             }}
             className={
               idx === currentPage ? "page-btn-active" : "page-btn-inactive"

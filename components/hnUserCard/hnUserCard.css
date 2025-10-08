@@ -1,0 +1,123 @@
+@media (max-width: 700px) {
+  .hn-user-card {
+    max-width: 90%;
+  }
+}
+
+.hn-user-card {
+  width: 100%;
+  background-color: #1d1d1d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  border-radius: 5px;
+  margin: 20px auto 0px auto;
+  overflow: hidden;
+}
+
+.hn-about-container {
+  padding: 20px;
+}
+
+.hn-about {
+  height: 300px;
+  overflow: auto;
+  text-align: center;
+  --track: rgb(63, 63, 63); /* track color */
+  --thumb: #2c2c2c; /* thumb color */
+  --thumb-hover: #ffffff;
+  --thumb-active: #ffffff;
+}
+
+.hn-about {
+  scrollbar-width: thin; /* auto | thin | none */
+  scrollbar-color: var(--thumb) var(--track);
+}
+
+.hn-user-card h1 {
+  font-size: 2rem;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 1px solid white;
+  background-color: #0f0f0f;
+  padding: 20px 0 20px 0;
+  width: 100%;
+}
+
+.hn-user-card h3 {
+  padding: 20px;
+}
+
+.hn-user-card p {
+  padding: 20px;
+}
+
+.hn-user-card h3 {
+  border: 1px solid white;
+  width: fit-content;
+  margin-top: 0;
+  text-align: right;
+}
+
+.hn-about-title {
+  text-align: center;
+  font-size: 1.6rem;
+  width: 50%;
+  margin: 0px auto 20px auto;
+  border-bottom: 1px solid white;
+  padding: 0;
+}
+
+.hn-user-card-container {
+  height: 400px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.user-card-loading h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.user-card-loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  --tile: 100px;
+
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'>\
+  <text x='50%' y='50%' text-anchor='middle' dominant-baseline='middle' \
+        font-family='monospace' font-size='24' fill='rgba(255,255,255, .15)'>&lt;/&gt;</text>\
+</svg>");
+  background-size: var(--tile);
+}
+
+.hn-user-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  /* flex-direction: column;
+  justify-content: center;
+  justify-items: center; */
+  background-color: black;
+  color: rgb(255, 255, 255);
+  --tile: 100px;
+
+  /* background-repeat: ; */
+
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'>\
+  <text x='50%' y='50%' text-anchor='middle' dominant-baseline='middle' \
+        font-family='monospace' font-size='24' fill='rgba(255,255,255, .15)'>&lt;/&gt;</text>\
+</svg>");
+  background-size: var(--tile);
+}
