@@ -1,5 +1,5 @@
 @media (max-width: 700px) {
-  .hn-user-card {
+  .hn-user-card-container {
     max-width: 90%;
   }
 }
