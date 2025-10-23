@@ -142,3 +142,9 @@
 </svg>");
   background-size: var(--tile);
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .clear-search-button:hover {
+    background-color: rgb(117, 6, 117);
+  }
+}
