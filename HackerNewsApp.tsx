@@ -55,7 +55,6 @@ const cleanParamStr = (str: string | null) => {
 };
 
 const HackerNewsApp = () => {
-  // Comment test
   const [stories, setStories] = useState<Story | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [searched, setSearched] = useState<boolean>(false);
