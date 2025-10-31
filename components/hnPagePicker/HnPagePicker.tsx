@@ -40,7 +40,7 @@ const HnPagePicker = ({
             className={
               idx === currentPage ? "page-btn-active" : "page-btn-inactive"
             }
-            key={Math.random()}
+            key={`hn-page-number-${idx}`}
           >
             {pageNum + 1}
           </button>
